@@ -13,5 +13,6 @@
     $this->item = Doctrine::getTable($this->model)->findOneBy<?php echo sfInflector::camelize($primaryKey) ?>($primaryKey);
     $this->forward404Unless($this->item);
     $this->item->delete();
+    $this->getResponse()->setStatusCode(204);
     return sfView::NONE;
   }
