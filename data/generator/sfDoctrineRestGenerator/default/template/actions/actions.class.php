@@ -49,6 +49,12 @@ class <?php echo $this->getGeneratedModuleName() ?>Actions extends <?php echo $t
 <?php include dirname(__FILE__).'/../../parts/postValidate.php' ?>
 
 <?php include dirname(__FILE__).'/../../parts/query.php' ?>
+
+
+<?php include dirname(__FILE__).'/../../parts/addQueryLimit.php' ?>
+
+<?php include dirname(__FILE__).'/../../parts/addQuerySort.php' ?>
+
 <?php include dirname(__FILE__).'/../../parts/queryAdditionnal.php' ?>
 
 <?php include dirname(__FILE__).'/../../parts/queryExecute.php' ?>

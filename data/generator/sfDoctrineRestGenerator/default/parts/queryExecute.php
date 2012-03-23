@@ -6,12 +6,18 @@
    */
   public function queryExecute($params)
   {
-    $this->objects = $this->dispatcher->filter(
+
+    $query = $this->query($params);
+    $query = $this->addQuerySort($query, $params);
+    $query = $this->addQueryLimit($query, $params);
+
+
+  $this->objects = $this->dispatcher->filter(
       new sfEvent(
         $this,
         'sfDoctrineRestGenerator.filter_results',
         array()
       ),
-      $this->query($params)->execute(array(), Doctrine::HYDRATE_ARRAY)
+      $query->execute(array(), Doctrine::HYDRATE_ARRAY)
     )->getReturnValue();
   }
