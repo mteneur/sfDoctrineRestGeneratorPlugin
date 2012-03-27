@@ -51,7 +51,7 @@ $test_browser->
   end()->
 
   with('response')->begin()->//debug()->
-    isStatusCode(200)->
+    isStatusCode(201)->
   end()
 ;
 
@@ -104,7 +104,7 @@ if ($location)
     end()->
 
     with('response')->begin()->//debug()->
-      isStatusCode(200)->
+      isStatusCode(204)->
     end()
   ;
 }
